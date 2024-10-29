@@ -1,0 +1,6 @@
+@KH.Lab.FeatureManagementLab_HostAddress = http://localhost:5212
+
+GET {{KH.Lab.FeatureManagementLab_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
