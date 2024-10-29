@@ -1,4 +1,6 @@
+using KH.Lab.FeatureManagementLab.Infrastructure.Handler;
 using Microsoft.FeatureManagement;
+using Microsoft.FeatureManagement.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +31,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// 添加自定義的 FeatureNotEnabledHandler
+builder.Services.AddSingleton<IDisabledFeaturesHandler, FeatureNotEnabledHandler>();
 
 var app = builder.Build();
 
